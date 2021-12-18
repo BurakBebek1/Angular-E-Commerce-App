@@ -1,0 +1,18 @@
+.form-control {
+  border-radius: 3px;
+  width: 600px;
+  margin-left: 15px;
+
+  &::placeholder {
+    font-size: 20px;
+    color: lightgray;
+  }
+}
+
+.search-icon {
+  position: absolute;
+  z-index: 10;
+  right: 27%;
+  bottom: 22px;
+  color: blue;
+}

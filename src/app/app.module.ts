@@ -3,14 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './component/header/header.component';
+import { CartComponent } from './component/cart/cart.component';
+import { ProductsComponent } from './component/products/products.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './shared/filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    CartComponent,
+    ProductsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

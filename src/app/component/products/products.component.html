@@ -1,0 +1,63 @@
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+    <div class="item">
+      <a (click)="filter('')">
+        <h6>Tüm Ürünler</h6>
+      </a>
+    </div>
+
+    <div class="item">
+      <a (click)="filter('electronics')">
+        <h6>Elektronik</h6>
+      </a>
+    </div>
+
+    <div class="item">
+      <a (click)="filter('fashion')">
+        <h6>Moda</h6>
+      </a>
+    </div>
+
+    <div class="item">
+      <a (click)="filter('jewelery')">
+        <h6>Mücevher</h6>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <ng-container
+      *ngFor="let product of filterCategory | filter: searchKey:'title'"
+    >
+      <div class="card col-md-3">
+        <img src="{{ product.image }}" alt="" />
+        <h5
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ product.title }}
+        </h5>
+        <p
+          style="
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100ch;
+          "
+        >
+          {{ product.description }}
+        </p>
+        <p><strong>Fiyat:</strong>{{ product.price }}₺</p>
+        <button class="btn btn-primary" (click)="addToCart(product)">
+          Sepete Ekle
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<header>
+  <div class="navbar navbar-dark bg-primary shadow-sm">
+    <div class="navbar-brand aling-item-center d-flex">
+      <i
+        style="font-size: 40px; margin-left: 10px"
+        class="fas fa-shipping-fast"
+      >
+        &nbsp;
+        <strong>HepsiBurakta</strong>
+      </i>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="searchTerm"
+          (keyup)="search($event)"
+          placeholder="Ürün Ara"
+        />
+      </div>
+      <span class="fas fa-search search-icon"></span>
+    </div>
+    <button
+      routerLink="cart"
+      style="margin-right: 110px"
+      class="btn btn-primary"
+    >
+      <i style="font-size: 30px" class="fas fa-cart-plus"></i>
+      <div class="badge bg-danger">{{ totalNumber }}</div>
+    </button>
+  </div>
+</header>
